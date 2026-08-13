@@ -1,0 +1,405 @@
+@import "tailwindcss";
+
+@theme {
+  /* ------------------------------------------------------------------------
+     Palette officielle temaconcept.com : marine, bleu clair, blanc.
+     Deux « degrés » de bleu seulement, pour une hiérarchie nette :
+       - ink (#06324C)   : texte principal, fonds sombres, titres
+       - azure (#4DA9D9) : accent unique (CTA, liens, highlights)
+       - acier (#47708A) : bleu adouci pour les libellés secondaires
+  ------------------------------------------------------------------------ */
+  --color-ink: #06324c;
+  --color-ink-soft: #0a3a57;
+  --color-ink-muted: #33576e;
+  --color-brume: #f5fafd;
+  --color-verre: #e0eef6;
+  --color-verre-dark: #c8ddec;
+  --color-acier: #47708a;
+  --color-acier-light: #8fb4cc;
+  --color-azure: #4da9d9;
+  --color-sky-fade: #e8f4fa;
+  --color-signal: #4da9d9;
+
+  /* Rôles sémantiques — consommés par les composants du design system.
+     primary/secondary/surface/accent = la palette officielle ;
+     neutral = texte secondaire AA ; success/warning/danger = états
+     (formulaires, leads, notifications). */
+  --color-primary: #06324c;
+  --color-secondary: #47708a;
+  --color-neutral: #33576e;
+  --color-surface: #f5fafd;
+  --color-surface-elevated: #ffffff;
+  --color-accent: #4da9d9;
+  --color-accent-strong: #16607f;
+  --color-border: #c8ddec;
+
+  --color-success: #1e7a4d;
+  --color-warning: #9a5b00;
+  --color-danger: #b3261e;
+
+  /* Typographie : Archivo en display (titres), Inter en texte courant,
+     JetBrains Mono pour les libellés « système » (kickers, tags). */
+  --font-display: "Archivo", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --shadow-panel: 0 24px 60px -28px rgb(6 50 76 / 0.45);
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+
+* {
+  scroll-margin-top: 6rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-brume text-ink font-sans antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-brume);
+}
+
+:focus-visible {
+  /* currentColor suit le contexte : contrasté sur fond clair comme sur fond
+     sombre, sans dépendre d'une teinte unique (WCAG 1.4.11). */
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Typographie & composants — dans @layer components pour que les      */
+/* utilitaires Tailwind (text-azure, text-brume, bg-white…) puissent   */
+/* surcharger leurs couleurs (sinon la règle non « layerée » gagne).   */
+/* ------------------------------------------------------------------ */
+
+@layer components {
+  .display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    text-wrap: balance;
+  }
+
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-ink);
+  }
+
+  .lede {
+    @apply text-ink;
+    font-size: 1.125rem;
+    line-height: 1.65;
+    text-wrap: pretty;
+  }
+
+  .section-index {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+  }
+
+  /* Boutons : gérés par <Button /> (frontend/src/components/ui/Button.tsx).
+     Les variantes CSS historiques (.btn, .btn-signal, …) ont été supprimées :
+     on n'instancie plus un bouton via une classe mais via le composant. */
+
+  .field {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .field-label {
+    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-acier;
+  }
+
+  .input {
+    @apply w-full border border-verre-dark bg-brume px-4 py-3 font-sans text-sm text-ink transition-colors placeholder:text-acier focus:border-ink focus:outline-none;
+  }
+
+  .panel {
+    @apply bg-brume;
+    border: 1px solid var(--color-verre-dark);
+  }
+
+  .card-dark {
+    @apply bg-ink text-brume;
+  }
+
+  .proj-card {
+    transition:
+      transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .proj-card:hover,
+  .proj-card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-panel);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Animations                                                          */
+/* ------------------------------------------------------------------ */
+
+@keyframes rosette-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Rosette de la marque (chargement, avatar de Lina) */
+.rosette-spin {
+  animation: rosette-spin 40s linear infinite;
+  transform-origin: center;
+}
+
+/* Révélation au scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-draw {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-draw.is-in {
+  transform: scaleX(1);
+}
+
+/* Micro-interactions */
+.group-line::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.7;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group-line:hover::after,
+.group-line:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Réalisations : composition éditoriale, sans effet de cartes répétées. */
+.project-entry__media {
+  aspect-ratio: 16 / 10;
+}
+
+.project-entry--featured .project-entry__media {
+  aspect-ratio: 16 / 10.5;
+}
+
+.project-entry--secondary .project-entry__media {
+  aspect-ratio: 16 / 8.5;
+}
+
+.project-entry__image {
+  transition: filter 0.35s ease;
+}
+
+.project-entry__veil {
+  background: rgb(0 11 19 / 0.08);
+  transition: background 0.35s ease;
+}
+
+.project-entry:hover .project-entry__image {
+  filter: saturate(0.9) brightness(0.88);
+}
+
+.project-entry:hover .project-entry__veil {
+  background: rgb(0 11 19 / 0.22);
+}
+
+.project-entry__title {
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.project-entry--featured .project-entry__title {
+  font-size: clamp(1.45rem, 2.25vw, 2rem);
+}
+
+.project-entry__summary {
+  font-size: 0.925rem;
+}
+
+@media (min-width: 1024px) {
+  .project-entry--featured .project-entry__summary {
+    max-width: 42rem;
+    font-size: 1rem;
+  }
+}
+
+/* Indicateur de frappe « humain » de Lina */
+@keyframes typing-bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  30% {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  animation: typing-bounce 1.2s ease-in-out infinite;
+}
+
+/* Slider du hero : entrée étagée du texte à chaque diapositive */
+@keyframes hero-slide-fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-slide-enter > * {
+  opacity: 0;
+  animation: hero-slide-fade 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-slide-enter > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.hero-slide-enter > *:nth-child(2) {
+  animation-delay: 0.14s;
+}
+
+.hero-slide-enter > *:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+.hero-slide-enter > *:nth-child(4) {
+  animation-delay: 0.34s;
+}
+
+.hero-slide-enter > *:nth-child(5) {
+  animation-delay: 0.44s;
+}
+
+@keyframes hero-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.hero-progress {
+  animation: hero-progress 6s linear forwards;
+}
+
+.hero-paused .hero-progress {
+  animation-play-state: paused;
+}
+
+/* Ligne de balayage « système » qui descend lentement dans le hero */
+@keyframes hero-scan {
+  0% {
+    top: -12%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.55;
+  }
+  88% {
+    opacity: 0.55;
+  }
+  100% {
+    top: 112%;
+    opacity: 0;
+  }
+}
+
+.hero-scan {
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgb(77 169 217 / 0.35),
+    transparent
+  );
+  animation: hero-scan 9s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+/* Apparition du nav au chargement */
+@keyframes nav-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-anim {
+  animation: nav-drop 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ------------------------------------------------------------------ */
+/* Accessibilité : réduire les animations                              */
+/* ------------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .rosette-spin {
+    animation: none;
+  }
+}

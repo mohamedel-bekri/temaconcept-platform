@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="L'équipe en atelier">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a3a57"/>
+      <stop offset="0.55" stop-color="#06324c"/>
+      <stop offset="1" stop-color="#02121f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="#4da9d9" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#4da9d9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#8fb4cc" opacity="0.16"/>
+    </pattern>
+    <path id="rosette" d="M0 -150 C10 -50 30 -10 140 0 C30 10 10 50 0 150 C-10 50 -30 10 -140 0 C-30 -10 -10 -50 0 -150 Z"/>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#dots)"/>
+  <rect width="1200" height="900" fill="url(#glow)"/>
+
+  <g transform="translate(975 175) scale(2.4)" fill="none" stroke="#4da9d9" stroke-opacity="0.22" stroke-width="14">
+    <use href="#rosette"/>
+    <use href="#rosette" transform="rotate(45)"/>
+  </g>
+
+  <g stroke="#4da9d9" stroke-opacity="0.5" stroke-width="3" fill="none">
+    <path d="M40 84 V40 H84"/>
+    <path d="M1160 84 V40 H1116"/>
+    <path d="M40 816 V860 H84"/>
+    <path d="M1160 816 V860 H1116"/>
+  </g>
+
+  <g font-family="'JetBrains Mono', monospace">
+    <text x="60" y="836" fill="#8fb4cc" font-size="20" letter-spacing="6">TEMACONCEPT</text>
+    <text x="60" y="866" fill="#e8f4fa" font-size="16" letter-spacing="6" opacity="0.85">LABO — L'ÉQUIPE</text>
+  </g>
+
+  <g stroke="#4da9d9" stroke-opacity="0.7" stroke-width="3" fill="none">
+    <line x1="430" y1="470" x2="600" y2="500"/>
+    <line x1="770" y1="470" x2="600" y2="500"/>
+    <line x1="430" y1="470" x2="770" y2="470"/>
+  </g>
+
+  <g>
+    <g>
+      <path d="M430 470 a70 60 0 0 1 140 0 Z" fill="#0a3a57" fill-opacity="0.6" stroke="#e8f4fa" stroke-opacity="0.8" stroke-width="3"/>
+      <circle cx="500" cy="392" r="40" fill="#0a3a57" fill-opacity="0.6" stroke="#e8f4fa" stroke-opacity="0.85" stroke-width="3"/>
+      <circle cx="500" cy="392" r="40" fill="none" stroke="#4da9d9" stroke-opacity="0.5" stroke-width="2"/>
+      <path d="M476 396 q12 10 24 0 M506 396 q12 10 24 0" stroke="#4da9d9" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+    <g>
+      <path d="M540 470 a70 60 0 0 1 140 0 Z" fill="#0a3a57" fill-opacity="0.6" stroke="#e8f4fa" stroke-opacity="0.8" stroke-width="3"/>
+      <circle cx="610" cy="352" r="40" fill="#0a3a57" fill-opacity="0.6" stroke="#e8f4fa" stroke-opacity="0.85" stroke-width="3"/>
+      <circle cx="610" cy="352" r="40" fill="none" stroke="#4da9d9" stroke-opacity="0.5" stroke-width="2"/>
+      <path d="M586 356 q12 10 24 0 M616 356 q12 10 24 0" stroke="#4da9d9" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+    <g>
+      <path d="M700 470 a70 60 0 0 1 140 0 Z" fill="#0a3a57" fill-opacity="0.6" stroke="#e8f4fa" stroke-opacity="0.8" stroke-width="3"/>
+      <circle cx="770" cy="392" r="40" fill="#0a3a57" fill-opacity="0.6" stroke="#e8f4fa" stroke-opacity="0.85" stroke-width="3"/>
+      <circle cx="770" cy="392" r="40" fill="none" stroke="#4da9d9" stroke-opacity="0.5" stroke-width="2"/>
+      <path d="M746 396 q12 10 24 0 M776 396 q12 10 24 0" stroke="#4da9d9" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <g transform="translate(600 500)">
+    <circle cx="0" cy="0" r="9" fill="#4da9d9"/>
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#4da9d9" stroke-opacity="0.5" stroke-width="2"/>
+  </g>
+
+  <g font-family="'JetBrains Mono', monospace">
+    <rect x="420" y="560" width="190" height="56" rx="10" fill="#06324c" stroke="#4da9d9" stroke-opacity="0.7" stroke-width="3"/>
+    <text x="440" y="586" fill="#4da9d9" font-size="15" letter-spacing="2">VEILLE ACTIVE</text>
+    <text x="440" y="606" fill="#e8f4fa" font-size="13" letter-spacing="1" opacity="0.9">PROTOTYPES &amp; IA</text>
+  </g>
+</svg>

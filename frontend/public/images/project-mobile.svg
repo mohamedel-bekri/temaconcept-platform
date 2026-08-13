@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Application mobile de livraison">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a3a57"/>
+      <stop offset="0.55" stop-color="#06324c"/>
+      <stop offset="1" stop-color="#02121f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="#4da9d9" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#4da9d9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#8fb4cc" opacity="0.16"/>
+    </pattern>
+    <path id="rosette" d="M0 -150 C10 -50 30 -10 140 0 C30 10 10 50 0 150 C-10 50 -30 10 -140 0 C-30 -10 -10 -50 0 -150 Z"/>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#dots)"/>
+  <rect width="1200" height="900" fill="url(#glow)"/>
+
+  <g transform="translate(975 175) scale(2.4)" fill="none" stroke="#4da9d9" stroke-opacity="0.22" stroke-width="14">
+    <use href="#rosette"/>
+    <use href="#rosette" transform="rotate(45)"/>
+  </g>
+
+  <g stroke="#4da9d9" stroke-opacity="0.5" stroke-width="3" fill="none">
+    <path d="M40 84 V40 H84"/>
+    <path d="M1160 84 V40 H1116"/>
+    <path d="M40 816 V860 H84"/>
+    <path d="M1160 816 V860 H1116"/>
+  </g>
+
+  <g font-family="'JetBrains Mono', monospace">
+    <text x="60" y="836" fill="#8fb4cc" font-size="20" letter-spacing="6">TEMACONCEPT</text>
+    <text x="60" y="866" fill="#e8f4fa" font-size="16" letter-spacing="6" opacity="0.85">SYS — MOBILE DELIVERY</text>
+  </g>
+
+  <g transform="rotate(-8 600 420)">
+    <rect x="522" y="215" width="156" height="330" rx="26" fill="#0a3a57" fill-opacity="0.7" stroke="#e8f4fa" stroke-opacity="0.9" stroke-width="4"/>
+    <rect x="534" y="250" width="132" height="252" rx="8" fill="#06324c"/>
+    <rect x="570" y="230" width="60" height="8" rx="4" fill="#e8f4fa" opacity="0.5"/>
+    <line x1="546" y1="286" x2="654" y2="286" stroke="#e8f4fa" stroke-opacity="0.25" stroke-width="2"/>
+    <g fill="#4da9d9">
+      <circle cx="552" cy="316" r="8"/>
+      <circle cx="584" cy="316" r="8" opacity="0.6"/>
+      <circle cx="616" cy="316" r="8" opacity="0.35"/>
+    </g>
+    <rect x="546" y="352" width="108" height="14" rx="7" fill="#e8f4fa" opacity="0.85"/>
+    <rect x="546" y="378" width="88" height="14" rx="7" fill="#e8f4fa" opacity="0.45"/>
+    <rect x="546" y="404" width="98" height="14" rx="7" fill="#e8f4fa" opacity="0.45"/>
+    <path d="M560 452 L600 452" stroke="#4da9d9" stroke-width="8" stroke-linecap="round"/>
+    <path d="M596 448 L608 452 L596 456" fill="none" stroke="#4da9d9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="rotate(8 640 300)">
+    <rect x="602" y="228" width="150" height="96" rx="14" fill="#06324c" stroke="#4da9d9" stroke-opacity="0.7" stroke-width="3"/>
+    <text x="626" y="272" fill="#e8f4fa" font-family="'JetBrains Mono', monospace" font-size="20" letter-spacing="2">LIVRÉ ✓</text>
+    <rect x="626" y="292" width="100" height="10" rx="5" fill="#4da9d9"/>
+    <circle cx="666" cy="297" r="14" fill="#e8f4fa"/>
+    <path d="M652 297 L668 297 M660 291 L668 297 L660 303" fill="none" stroke="#06324c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <circle cx="756" cy="330" r="5" fill="#4da9d9"/>
+  <circle cx="786" cy="346" r="3" fill="#e8f4fa" opacity="0.6"/>
+</svg>

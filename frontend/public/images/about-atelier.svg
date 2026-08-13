@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Poste de développement de nos ingénieurs">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a3a57"/>
+      <stop offset="0.55" stop-color="#06324c"/>
+      <stop offset="1" stop-color="#02121f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="#4da9d9" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#4da9d9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#8fb4cc" opacity="0.16"/>
+    </pattern>
+    <path id="rosette" d="M0 -150 C10 -50 30 -10 140 0 C30 10 10 50 0 150 C-10 50 -30 10 -140 0 C-30 -10 -10 -50 0 -150 Z"/>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#dots)"/>
+  <rect width="1200" height="900" fill="url(#glow)"/>
+
+  <g transform="translate(975 175) scale(2.4)" fill="none" stroke="#4da9d9" stroke-opacity="0.22" stroke-width="14">
+    <use href="#rosette"/>
+    <use href="#rosette" transform="rotate(45)"/>
+  </g>
+
+  <g stroke="#4da9d9" stroke-opacity="0.5" stroke-width="3" fill="none">
+    <path d="M40 84 V40 H84"/>
+    <path d="M1160 84 V40 H1116"/>
+    <path d="M40 816 V860 H84"/>
+    <path d="M1160 816 V860 H1116"/>
+  </g>
+
+  <g font-family="'JetBrains Mono', monospace">
+    <text x="60" y="836" fill="#8fb4cc" font-size="20" letter-spacing="6">TEMACONCEPT</text>
+    <text x="60" y="866" fill="#e8f4fa" font-size="16" letter-spacing="6" opacity="0.85">SYS — L'ATELIER</text>
+  </g>
+
+  <g>
+    <rect x="420" y="520" width="360" height="16" rx="8" fill="#06324c" stroke="#e8f4fa" stroke-opacity="0.6" stroke-width="3"/>
+    <line x1="560" y1="536" x2="540" y2="580" stroke="#e8f4fa" stroke-opacity="0.5" stroke-width="6" stroke-linecap="round"/>
+    <line x1="640" y1="536" x2="660" y2="580" stroke="#e8f4fa" stroke-opacity="0.5" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <rect x="440" y="300" width="320" height="220" rx="10" fill="#0a3a57" fill-opacity="0.6" stroke="#e8f4fa" stroke-opacity="0.9" stroke-width="4"/>
+    <g font-family="'JetBrains Mono', monospace" fill="none" stroke="#4da9d9" stroke-width="5">
+      <path d="M500 360 l46 30 l-46 30"/>
+      <path d="M680 360 l-46 30 l46 30"/>
+      <path d="M560 360 l30 60" stroke="#e8f4fa" stroke-width="4"/>
+    </g>
+    <circle cx="462" cy="330" r="5" fill="#4da9d9"/>
+    <circle cx="482" cy="330" r="5" fill="#e8f4fa" opacity="0.5"/>
+    <circle cx="502" cy="330" r="5" fill="#e8f4fa" opacity="0.3"/>
+  </g>
+
+  <g>
+    <rect x="468" y="520" width="264" height="70" rx="8" fill="#06324c" stroke="#e8f4fa" stroke-opacity="0.5" stroke-width="3"/>
+    <g fill="#e8f4fa" opacity="0.4">
+      <rect x="486" y="536" width="26" height="10" rx="3"/>
+      <rect x="518" y="536" width="26" height="10" rx="3"/>
+      <rect x="550" y="536" width="26" height="10" rx="3"/>
+      <rect x="486" y="554" width="26" height="10" rx="3"/>
+      <rect x="518" y="554" width="26" height="10" rx="3"/>
+      <rect x="550" y="554" width="26" height="10" rx="3"/>
+      <rect x="588" y="536" width="26" height="10" rx="3"/>
+      <rect x="588" y="554" width="26" height="10" rx="3"/>
+    </g>
+  </g>
+
+  <g>
+    <rect x="820" y="380" width="64" height="64" rx="10" fill="#06324c" stroke="#4da9d9" stroke-opacity="0.7" stroke-width="3"/>
+    <path d="M830 400 h42 v28 h-42 Z M832 414 h38 M840 400 v-14 h-4 M838 386 h8" fill="none" stroke="#4da9d9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g font-family="'JetBrains Mono', monospace">
+    <rect x="424" y="200" width="168" height="48" rx="10" fill="#06324c" stroke="#4da9d9" stroke-opacity="0.7" stroke-width="3"/>
+    <text x="440" y="224" fill="#4da9d9" font-size="15" letter-spacing="2">CODE / DOCS</text>
+    <text x="440" y="242" fill="#e8f4fa" font-size="12" letter-spacing="1" opacity="0.9">TOUT EST DOCUMENTÉ</text>
+  </g>
+</svg>

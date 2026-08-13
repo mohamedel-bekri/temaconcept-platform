@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Plateforme e-learning">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a3a57"/>
+      <stop offset="0.55" stop-color="#06324c"/>
+      <stop offset="1" stop-color="#02121f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="#4da9d9" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#4da9d9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#8fb4cc" opacity="0.16"/>
+    </pattern>
+    <path id="rosette" d="M0 -150 C10 -50 30 -10 140 0 C30 10 10 50 0 150 C-10 50 -30 10 -140 0 C-30 -10 -10 -50 0 -150 Z"/>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#dots)"/>
+  <rect width="1200" height="900" fill="url(#glow)"/>
+
+  <g transform="translate(975 175) scale(2.4)" fill="none" stroke="#4da9d9" stroke-opacity="0.22" stroke-width="14">
+    <use href="#rosette"/>
+    <use href="#rosette" transform="rotate(45)"/>
+  </g>
+
+  <g stroke="#4da9d9" stroke-opacity="0.5" stroke-width="3" fill="none">
+    <path d="M40 84 V40 H84"/>
+    <path d="M1160 84 V40 H1116"/>
+    <path d="M40 816 V860 H84"/>
+    <path d="M1160 816 V860 H1116"/>
+  </g>
+
+  <g font-family="'JetBrains Mono', monospace">
+    <text x="60" y="836" fill="#8fb4cc" font-size="20" letter-spacing="6">TEMACONCEPT</text>
+    <text x="60" y="866" fill="#e8f4fa" font-size="16" letter-spacing="6" opacity="0.85">SYS — E-LEARNING</text>
+  </g>
+
+  <g>
+    <rect x="430" y="255" width="300" height="196" rx="12" fill="#0a3a57" fill-opacity="0.6" stroke="#e8f4fa" stroke-opacity="0.85" stroke-width="3"/>
+    <rect x="382" y="440" width="396" height="16" rx="8" fill="#06324c" stroke="#e8f4fa" stroke-opacity="0.6" stroke-width="3"/>
+    <path d="M430 255 L430 440 L730 440 L730 255" fill="none" stroke="#e8f4fa" stroke-opacity="0.12" stroke-width="2"/>
+    <polygon points="576,296 656,346 576,396" fill="#4da9d9"/>
+    <circle cx="576" cy="346" r="58" fill="none" stroke="#e8f4fa" stroke-opacity="0.35" stroke-width="2"/>
+
+    <g font-family="'JetBrains Mono', monospace">
+      <rect x="452" y="284" width="92" height="34" rx="8" fill="#06324c" stroke="#4da9d9" stroke-opacity="0.6" stroke-width="2"/>
+      <text x="464" y="305" fill="#e8f4fa" font-size="13" letter-spacing="1">COURS 01</text>
+      <rect x="452" y="330" width="70" height="10" rx="5" fill="#4da9d9"/>
+      <rect x="452" y="350" width="80" height="10" rx="5" fill="#e8f4fa" opacity="0.25"/>
+      <rect x="452" y="370" width="60" height="10" rx="5" fill="#e8f4fa" opacity="0.25"/>
+    </g>
+  </g>
+
+  <g>
+    <rect x="424" y="150" width="92" height="86" rx="8" fill="#06324c" stroke="#4da9d9" stroke-opacity="0.7" stroke-width="3"/>
+    <path d="M470 160 l0 66" stroke="#4da9d9" stroke-width="4" stroke-linecap="round"/>
+    <path d="M470 160 l26 14 l-26 14 l-26 -14 Z" fill="#4da9d9"/>
+  </g>
+  <circle cx="638" cy="202" r="44" fill="none" stroke="#e8f4fa" stroke-opacity="0.35" stroke-width="5" stroke-linecap="round" stroke-dasharray="220 56" transform="rotate(-90 638 202)"/>
+  <text x="622" y="210" fill="#e8f4fa" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="700">80%</text>
+
+  <g font-family="'JetBrains Mono', monospace">
+    <rect x="760" y="330" width="170" height="58" rx="10" fill="#06324c" stroke="#4da9d9" stroke-opacity="0.7" stroke-width="3"/>
+    <text x="778" y="354" fill="#4da9d9" font-size="15" letter-spacing="2">CERTIFICAT</text>
+    <text x="778" y="374" fill="#e8f4fa" font-size="13" letter-spacing="1" opacity="0.9">OBTENU ✓</text>
+  </g>
+</svg>

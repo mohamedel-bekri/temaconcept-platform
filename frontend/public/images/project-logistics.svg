@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Tableau de bord décisionnel multi-canaux">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a3a57"/>
+      <stop offset="0.55" stop-color="#06324c"/>
+      <stop offset="1" stop-color="#02121f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="#4da9d9" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#4da9d9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#8fb4cc" opacity="0.16"/>
+    </pattern>
+    <path id="rosette" d="M0 -150 C10 -50 30 -10 140 0 C30 10 10 50 0 150 C-10 50 -30 10 -140 0 C-30 -10 -10 -50 0 -150 Z"/>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#dots)"/>
+  <rect width="1200" height="900" fill="url(#glow)"/>
+
+  <g transform="translate(975 175) scale(2.4)" fill="none" stroke="#4da9d9" stroke-opacity="0.22" stroke-width="14">
+    <use href="#rosette"/>
+    <use href="#rosette" transform="rotate(45)"/>
+  </g>
+
+  <g stroke="#4da9d9" stroke-opacity="0.5" stroke-width="3" fill="none">
+    <path d="M40 84 V40 H84"/>
+    <path d="M1160 84 V40 H1116"/>
+    <path d="M40 816 V860 H84"/>
+    <path d="M1160 816 V860 H1116"/>
+  </g>
+
+  <g font-family="'JetBrains Mono', monospace">
+    <text x="60" y="836" fill="#8fb4cc" font-size="20" letter-spacing="6">TEMACONCEPT</text>
+    <text x="60" y="866" fill="#e8f4fa" font-size="16" letter-spacing="6" opacity="0.85">SYS — BUSINESS INTELLIGENCE</text>
+  </g>
+
+  <g>
+    <polyline points="430 480 520 420 620 460 720 380 830 430" fill="none" stroke="#4da9d9" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="430 480 520 420 620 460 720 380 830 430" fill="none" stroke="#4da9d9" stroke-opacity="0.25" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#0a3a57" stroke="#e8f4fa" stroke-width="3">
+      <circle cx="430" cy="480" r="11"/>
+      <circle cx="520" cy="420" r="11"/>
+      <circle cx="620" cy="460" r="11"/>
+      <circle cx="720" cy="380" r="11"/>
+      <circle cx="830" cy="430" r="11"/>
+    </g>
+    <g fill="#e8f4fa">
+      <circle cx="430" cy="480" r="4"/>
+      <circle cx="520" cy="420" r="4"/>
+      <circle cx="620" cy="460" r="4"/>
+      <circle cx="720" cy="380" r="4"/>
+      <circle cx="830" cy="430" r="4"/>
+    </g>
+    <circle cx="830" cy="430" r="20" fill="none" stroke="#4da9d9" stroke-opacity="0.5" stroke-width="2">
+      <animate attributeName="r" from="18" to="34" dur="2.2s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-opacity" from="0.6" to="0" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+
+    <line x1="430" y1="480" x2="430" y2="560" stroke="#e8f4fa" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="4 6"/>
+    <line x1="520" y1="420" x2="520" y2="560" stroke="#e8f4fa" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="4 6"/>
+    <line x1="620" y1="460" x2="620" y2="560" stroke="#e8f4fa" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="4 6"/>
+    <line x1="720" y1="380" x2="720" y2="560" stroke="#e8f4fa" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="4 6"/>
+    <line x1="830" y1="430" x2="830" y2="560" stroke="#e8f4fa" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="4 6"/>
+    <line x1="390" y1="560" x2="870" y2="560" stroke="#e8f4fa" stroke-opacity="0.35" stroke-width="3"/>
+  </g>
+
+  <g font-family="'JetBrains Mono', monospace">
+    <rect x="424" y="270" width="120" height="52" rx="10" fill="#06324c" stroke="#4da9d9" stroke-opacity="0.7" stroke-width="3"/>
+    <text x="440" y="292" fill="#4da9d9" font-size="20" font-weight="700">+12,4%</text>
+    <text x="440" y="310" fill="#e8f4fa" font-size="12" letter-spacing="2" opacity="0.8">CA — Q3</text>
+    <rect x="730" y="268" width="180" height="60" rx="10" fill="#06324c" stroke="#4da9d9" stroke-opacity="0.7" stroke-width="3"/>
+    <text x="746" y="294" fill="#e8f4fa" font-size="14" letter-spacing="2">VENTES RÉSEAU</text>
+    <text x="746" y="314" fill="#4da9d9" font-size="16" letter-spacing="1">4 CANAUX</text>
+  </g>
+</svg>

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="ERP de gestion de stock">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a3a57"/>
+      <stop offset="0.55" stop-color="#06324c"/>
+      <stop offset="1" stop-color="#02121f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="#4da9d9" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#4da9d9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#8fb4cc" opacity="0.16"/>
+    </pattern>
+    <path id="rosette" d="M0 -150 C10 -50 30 -10 140 0 C30 10 10 50 0 150 C-10 50 -30 10 -140 0 C-30 -10 -10 -50 0 -150 Z"/>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#dots)"/>
+  <rect width="1200" height="900" fill="url(#glow)"/>
+
+  <g transform="translate(975 175) scale(2.4)" fill="none" stroke="#4da9d9" stroke-opacity="0.22" stroke-width="14">
+    <use href="#rosette"/>
+    <use href="#rosette" transform="rotate(45)"/>
+  </g>
+
+  <g stroke="#4da9d9" stroke-opacity="0.5" stroke-width="3" fill="none">
+    <path d="M40 84 V40 H84"/>
+    <path d="M1160 84 V40 H1116"/>
+    <path d="M40 816 V860 H84"/>
+    <path d="M1160 816 V860 H1116"/>
+  </g>
+
+  <g font-family="'JetBrains Mono', monospace">
+    <text x="60" y="836" fill="#8fb4cc" font-size="20" letter-spacing="6">TEMACONCEPT</text>
+    <text x="60" y="866" fill="#e8f4fa" font-size="16" letter-spacing="6" opacity="0.85">SYS — ERP STOCK</text>
+  </g>
+
+  <g>
+    <line x1="360" y1="300" x2="840" y2="300" stroke="#e8f4fa" stroke-opacity="0.35" stroke-width="3"/>
+    <line x1="360" y1="520" x2="840" y2="520" stroke="#e8f4fa" stroke-opacity="0.35" stroke-width="3"/>
+
+    <g>
+      <rect x="386" y="214" width="92" height="86" rx="6" fill="#0a3a57" fill-opacity="0.6" stroke="#e8f4fa" stroke-opacity="0.8" stroke-width="3"/>
+      <line x1="412" y1="242" x2="452" y2="242" stroke="#4da9d9" stroke-width="4" stroke-linecap="round"/>
+      <line x1="412" y1="258" x2="452" y2="258" stroke="#e8f4fa" stroke-opacity="0.5" stroke-width="4" stroke-linecap="round"/>
+      <line x1="412" y1="274" x2="452" y2="274" stroke="#e8f4fa" stroke-opacity="0.35" stroke-width="4" stroke-linecap="round"/>
+      <path d="M432 244 l12 -6 l12 6 l12 -10" fill="none" stroke="#4da9d9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g>
+      <rect x="508" y="214" width="92" height="86" rx="6" fill="#0a3a57" fill-opacity="0.6" stroke="#e8f4fa" stroke-opacity="0.8" stroke-width="3"/>
+      <line x1="534" y1="242" x2="574" y2="242" stroke="#4da9d9" stroke-width="4" stroke-linecap="round"/>
+      <line x1="534" y1="258" x2="574" y2="258" stroke="#e8f4fa" stroke-opacity="0.5" stroke-width="4" stroke-linecap="round"/>
+      <line x1="534" y1="274" x2="574" y2="274" stroke="#e8f4fa" stroke-opacity="0.35" stroke-width="4" stroke-linecap="round"/>
+      <path d="M554 244 l12 -6 l12 6 l12 -10" fill="none" stroke="#4da9d9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g>
+      <rect x="630" y="214" width="92" height="86" rx="6" fill="#0a3a57" fill-opacity="0.6" stroke="#e8f4fa" stroke-opacity="0.8" stroke-width="3"/>
+      <line x1="656" y1="242" x2="696" y2="242" stroke="#4da9d9" stroke-width="4" stroke-linecap="round"/>
+      <line x1="656" y1="258" x2="696" y2="258" stroke="#e8f4fa" stroke-opacity="0.5" stroke-width="4" stroke-linecap="round"/>
+      <line x1="656" y1="274" x2="696" y2="274" stroke="#e8f4fa" stroke-opacity="0.35" stroke-width="4" stroke-linecap="round"/>
+      <path d="M676 244 l12 -6 l12 6 l12 -10" fill="none" stroke="#4da9d9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <g>
+      <rect x="386" y="330" width="120" height="110" rx="6" fill="#0a3a57" fill-opacity="0.6" stroke="#e8f4fa" stroke-opacity="0.8" stroke-width="3"/>
+      <rect x="404" y="350" width="84" height="70" rx="4" fill="#06324c"/>
+      <rect x="416" y="364" width="60" height="8" rx="4" fill="#4da9d9"/>
+      <rect x="416" y="380" width="60" height="8" rx="4" fill="#e8f4fa" opacity="0.45"/>
+      <rect x="416" y="396" width="60" height="8" rx="4" fill="#e8f4fa" opacity="0.45"/>
+      <path d="M416 410 h52" stroke="#4da9d9" stroke-width="3" stroke-dasharray="6 6"/>
+    </g>
+    <g>
+      <rect x="536" y="330" width="120" height="110" rx="6" fill="#0a3a57" fill-opacity="0.6" stroke="#e8f4fa" stroke-opacity="0.8" stroke-width="3"/>
+      <rect x="554" y="350" width="84" height="70" rx="4" fill="#06324c"/>
+      <rect x="566" y="364" width="60" height="8" rx="4" fill="#4da9d9"/>
+      <rect x="566" y="380" width="60" height="8" rx="4" fill="#e8f4fa" opacity="0.45"/>
+      <rect x="566" y="396" width="60" height="8" rx="4" fill="#e8f4fa" opacity="0.45"/>
+      <path d="M566 410 h52" stroke="#4da9d9" stroke-width="3" stroke-dasharray="6 6"/>
+    </g>
+    <g>
+      <rect x="686" y="330" width="120" height="110" rx="6" fill="#0a3a57" fill-opacity="0.6" stroke="#e8f4fa" stroke-opacity="0.8" stroke-width="3"/>
+      <rect x="704" y="350" width="84" height="70" rx="4" fill="#06324c"/>
+      <rect x="716" y="364" width="60" height="8" rx="4" fill="#4da9d9"/>
+      <rect x="716" y="380" width="60" height="8" rx="4" fill="#e8f4fa" opacity="0.45"/>
+      <rect x="716" y="396" width="60" height="8" rx="4" fill="#e8f4fa" opacity="0.45"/>
+      <path d="M716 410 h52" stroke="#4da9d9" stroke-width="3" stroke-dasharray="6 6"/>
+    </g>
+  </g>
+
+  <g font-family="'JetBrains Mono', monospace">
+    <rect x="872" y="270" width="150" height="56" rx="10" fill="#06324c" stroke="#4da9d9" stroke-opacity="0.7" stroke-width="3"/>
+    <g fill="none" stroke="#e8f4fa" opacity="0.9">
+      <rect x="890" y="284" width="28" height="28" stroke-width="2"/>
+      <path d="M894 298 l10 -10 M904 288 l-10 10" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <text x="930" y="300" fill="#e8f4fa" font-size="18" letter-spacing="2">INV / OK</text>
+    <text x="930" y="318" fill="#4da9d9" font-size="13" letter-spacing="1" opacity="0.9">4 216 articles</text>
+  </g>
+</svg>

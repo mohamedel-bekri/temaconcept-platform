@@ -1,0 +1,25 @@
+# Dependencies and generated files
+**/node_modules/
+**/vendor/
+**/dist/
+**/build/
+
+# Environment files and local databases
+**/.env
+**/.env.*
+!**/.env.example
+**/*.sqlite
+**/*.sqlite3
+
+# Framework caches, logs and local uploads
+backend/storage/logs/
+backend/storage/framework/
+backend/bootstrap/cache/*.php
+backend/public/storage
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
