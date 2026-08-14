@@ -53,6 +53,8 @@ VITE_API_URL=https://votre-api.example.com
 
 Sur le serveur Laravel, définir `APP_URL` avec l'URL publique de l'API et `FRONTEND_URL` avec l'URL publique du frontend. Ces deux valeurs permettent les appels entre le site et l'API (CORS).
 
+Le dépôt contient également `render.yaml`, un Blueprint qui crée les deux services de démonstration sur Render. Pour une utilisation durable, remplacer SQLite par une base de données managée et renseigner les URL réellement attribuées par Render dans `APP_URL`, `FRONTEND_URL` et `VITE_API_URL`.
+
 ## Configuration facultative de Lina
 
 Lina fonctionne avec le moteur local par défaut. Pour activer OpenAI, renseignez dans `backend/.env` :
