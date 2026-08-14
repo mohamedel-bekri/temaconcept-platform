@@ -53,7 +53,7 @@ VITE_API_URL=https://votre-api.example.com
 
 Sur le serveur Laravel, définir `APP_URL` avec l'URL publique de l'API et `FRONTEND_URL` avec l'URL publique du frontend. Ces deux valeurs permettent les appels entre le site et l'API (CORS).
 
-Le backend Laravel est prêt pour Railway grâce à `backend/Dockerfile` et `backend/railway.json`. Pour une utilisation durable, renseigner les URL réellement attribuées par les hébergeurs dans `APP_URL`, `FRONTEND_URL` et `VITE_API_URL`.
+Le backend Laravel est prêt pour Railway grâce aux fichiers `Dockerfile` et `railway.json` placés à la racine du dépôt. Railway les détecte automatiquement, même si le projet contient aussi le frontend. Pour une utilisation durable, renseigner les URL réellement attribuées par les hébergeurs dans `APP_URL`, `FRONTEND_URL` et `VITE_API_URL`.
 
 ### Cloudflare Pages
 
@@ -72,11 +72,9 @@ Vercel peut héberger le frontend React avec les paramètres suivants : réperto
 
 ### Railway pour l'API Laravel
 
-Dans Railway, créer un projet depuis ce dépôt GitHub puis configurer le service avec :
+Dans Railway, créer un projet depuis ce dépôt GitHub. Aucun répertoire racine n'est à définir : Railway détecte le Dockerfile et la configuration à la racine. Ajouter seulement :
 
-- Répertoire racine : `/backend`
-- Fichier de configuration : `/backend/railway.json`
-- Volume persistant : point de montage `/app/database`
+- Volume persistant : point de montage `/app/backend/database`
 - Domaine public : à générer dans l'onglet Networking
 
 Ajouter ensuite les variables suivantes :
