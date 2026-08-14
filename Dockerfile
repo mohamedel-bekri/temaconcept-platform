@@ -8,7 +8,10 @@ RUN composer install --no-dev --prefer-dist --no-interaction --no-progress --opt
 FROM php:8.3-cli
 
 WORKDIR /app/backend
-RUN docker-php-ext-install pdo pdo_sqlite
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends libsqlite3-dev pkg-config \
+    && docker-php-ext-install pdo_sqlite \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY --from=dependencies /app/backend/vendor ./vendor
 COPY backend .
