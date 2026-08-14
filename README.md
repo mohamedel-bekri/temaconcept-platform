@@ -53,7 +53,7 @@ VITE_API_URL=https://votre-api.example.com
 
 Sur le serveur Laravel, définir `APP_URL` avec l'URL publique de l'API et `FRONTEND_URL` avec l'URL publique du frontend. Ces deux valeurs permettent les appels entre le site et l'API (CORS).
 
-Le dépôt contient `render.yaml` pour déployer l'API Laravel. Le frontend est prévu pour Cloudflare Pages. Pour une utilisation durable, remplacer SQLite par une base de données managée et renseigner les URL réellement attribuées par les hébergeurs dans `APP_URL`, `FRONTEND_URL` et `VITE_API_URL`.
+Le backend Laravel est prêt pour Railway grâce à `backend/Dockerfile` et `backend/railway.json`. Pour une utilisation durable, renseigner les URL réellement attribuées par les hébergeurs dans `APP_URL`, `FRONTEND_URL` et `VITE_API_URL`.
 
 ### Cloudflare Pages
 
@@ -62,13 +62,42 @@ Créer un projet Pages depuis ce dépôt avec les valeurs suivantes :
 - Répertoire racine : `frontend`
 - Commande de build : `npm run build`
 - Répertoire de sortie : `dist`
-- Variable de build : `VITE_API_URL=https://temaconcept-api.onrender.com`
+- Variable de build : `VITE_API_URL=https://votre-api.up.railway.app`
 
-Le fichier `frontend/public/_redirects` assure le chargement direct de toutes les routes React. Si Cloudflare ou Render attribue une URL différente, mettre à jour `VITE_API_URL` dans Cloudflare Pages, puis `FRONTEND_URL` dans le service Render avec l'URL `pages.dev` obtenue.
+Le fichier `frontend/public/_redirects` assure le chargement direct de toutes les routes React. Si Cloudflare ou Railway attribue une URL différente, mettre à jour `VITE_API_URL` dans Cloudflare Pages, puis `FRONTEND_URL` dans le service Railway avec l'URL `pages.dev` obtenue.
 
 ### Vercel (alternative au frontend Cloudflare)
 
-Vercel peut héberger le frontend React avec les paramètres suivants : répertoire racine `frontend`, preset « Vite », commande `npm run build`, sortie `dist`, et variable de production `VITE_API_URL` contenant l'URL publique de l'API Render. Le fichier `frontend/vercel.json` conserve le routage direct des pages React.
+Vercel peut héberger le frontend React avec les paramètres suivants : répertoire racine `frontend`, preset « Vite », commande `npm run build`, sortie `dist`, et variable de production `VITE_API_URL` contenant l'URL publique de l'API Railway. Le fichier `frontend/vercel.json` conserve le routage direct des pages React.
+
+### Railway pour l'API Laravel
+
+Dans Railway, créer un projet depuis ce dépôt GitHub puis configurer le service avec :
+
+- Répertoire racine : `/backend`
+- Fichier de configuration : `/backend/railway.json`
+- Volume persistant : point de montage `/app/database`
+- Domaine public : à générer dans l'onglet Networking
+
+Ajouter ensuite les variables suivantes :
+
+```env
+APP_NAME=TEMACONCEPT
+APP_ENV=production
+APP_KEY=une_cle_generee_par_laravel
+APP_DEBUG=false
+DB_CONNECTION=sqlite
+DB_DATABASE=database/database.sqlite
+SESSION_DRIVER=database
+CACHE_STORE=database
+QUEUE_CONNECTION=sync
+MAIL_MAILER=log
+CHATBOT_MODE=auto
+APP_URL=https://votre-api.up.railway.app
+FRONTEND_URL=https://votre-projet.vercel.app
+```
+
+Après avoir généré le domaine Railway, utiliser son URL pour `VITE_API_URL` dans Vercel. Après avoir obtenu l'URL Vercel, la reporter dans `FRONTEND_URL` sur Railway, puis redéployer les deux services.
 
 ## Configuration facultative de Lina
 

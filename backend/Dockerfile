@@ -17,6 +17,6 @@ RUN mkdir -p storage/framework/cache storage/framework/sessions storage/framewor
     && touch database/database.sqlite \
     && chmod -R 775 storage bootstrap/cache database
 
-# Pour une démo publique, l'initialisation de SQLite est relancée au démarrage.
-# Une base managée doit être préférée pour une mise en production durable.
-CMD ["sh", "-c", "php artisan migrate --seed --force && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"]
+# La base SQLite est créée au démarrage. Avec un volume Railway monté sur
+# /app/database, les données sont conservées après un redéploiement.
+CMD ["sh", "-c", "mkdir -p database && touch database/database.sqlite && php artisan migrate --seed --force && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"]
