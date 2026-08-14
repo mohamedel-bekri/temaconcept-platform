@@ -9,6 +9,7 @@ import type {
 
 const TOKEN_KEY = 'tema_token'
 const USER_KEY = 'tema_user'
+const API_BASE_URL = (import.meta.env.VITE_API_URL ?? '').replace(/\/$/, '')
 
 export function getToken(): string | null {
   return localStorage.getItem(TOKEN_KEY)
@@ -64,7 +65,7 @@ async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   if (token) headers.Authorization = `Bearer ${token}`
   if (options.body) headers['Content-Type'] = 'application/json'
 
-  const response = await fetch(path, { ...options, headers })
+  const response = await fetch(`${API_BASE_URL}${path}`, { ...options, headers })
 
   if (!response.ok) {
     let detail = response.statusText

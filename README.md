@@ -43,6 +43,16 @@ npm run dev
 
 Le site est accessible sur `http://localhost:5173`.
 
+## Déploiement public
+
+Le frontend accepte l'URL de l'API via la variable de build suivante :
+
+```env
+VITE_API_URL=https://votre-api.example.com
+```
+
+Sur le serveur Laravel, définir `APP_URL` avec l'URL publique de l'API et `FRONTEND_URL` avec l'URL publique du frontend. Ces deux valeurs permettent les appels entre le site et l'API (CORS).
+
 ## Configuration facultative de Lina
 
 Lina fonctionne avec le moteur local par défaut. Pour activer OpenAI, renseignez dans `backend/.env` :
