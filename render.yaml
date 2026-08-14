@@ -19,7 +19,7 @@ services:
       - key: APP_URL
         value: https://temaconcept-api.onrender.com
       - key: FRONTEND_URL
-        value: https://temaconcept-web.onrender.com
+        value: https://temaconcept-platform.pages.dev
       - key: DB_CONNECTION
         value: sqlite
       - key: DB_DATABASE
@@ -34,17 +34,3 @@ services:
         value: log
       - key: CHATBOT_MODE
         value: auto
-
-  - type: web
-    name: temaconcept-web
-    runtime: static
-    buildCommand: npm ci && npm run build
-    staticPublishPath: ./dist
-    rootDir: frontend
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
-    envVars:
-      - key: VITE_API_URL
-        value: https://temaconcept-api.onrender.com

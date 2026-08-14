@@ -53,7 +53,18 @@ VITE_API_URL=https://votre-api.example.com
 
 Sur le serveur Laravel, définir `APP_URL` avec l'URL publique de l'API et `FRONTEND_URL` avec l'URL publique du frontend. Ces deux valeurs permettent les appels entre le site et l'API (CORS).
 
-Le dépôt contient également `render.yaml`, un Blueprint qui crée les deux services de démonstration sur Render. Pour une utilisation durable, remplacer SQLite par une base de données managée et renseigner les URL réellement attribuées par Render dans `APP_URL`, `FRONTEND_URL` et `VITE_API_URL`.
+Le dépôt contient `render.yaml` pour déployer l'API Laravel. Le frontend est prévu pour Cloudflare Pages. Pour une utilisation durable, remplacer SQLite par une base de données managée et renseigner les URL réellement attribuées par les hébergeurs dans `APP_URL`, `FRONTEND_URL` et `VITE_API_URL`.
+
+### Cloudflare Pages
+
+Créer un projet Pages depuis ce dépôt avec les valeurs suivantes :
+
+- Répertoire racine : `frontend`
+- Commande de build : `npm run build`
+- Répertoire de sortie : `dist`
+- Variable de build : `VITE_API_URL=https://temaconcept-api.onrender.com`
+
+Le fichier `frontend/public/_redirects` assure le chargement direct de toutes les routes React. Si Cloudflare ou Render attribue une URL différente, mettre à jour `VITE_API_URL` dans Cloudflare Pages, puis `FRONTEND_URL` dans le service Render avec l'URL `pages.dev` obtenue.
 
 ## Configuration facultative de Lina
 
