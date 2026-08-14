@@ -66,6 +66,10 @@ Créer un projet Pages depuis ce dépôt avec les valeurs suivantes :
 
 Le fichier `frontend/public/_redirects` assure le chargement direct de toutes les routes React. Si Cloudflare ou Render attribue une URL différente, mettre à jour `VITE_API_URL` dans Cloudflare Pages, puis `FRONTEND_URL` dans le service Render avec l'URL `pages.dev` obtenue.
 
+### Vercel (alternative au frontend Cloudflare)
+
+Vercel peut héberger le frontend React avec les paramètres suivants : répertoire racine `frontend`, preset « Vite », commande `npm run build`, sortie `dist`, et variable de production `VITE_API_URL` contenant l'URL publique de l'API Render. Le fichier `frontend/vercel.json` conserve le routage direct des pages React.
+
 ## Configuration facultative de Lina
 
 Lina fonctionne avec le moteur local par défaut. Pour activer OpenAI, renseignez dans `backend/.env` :
