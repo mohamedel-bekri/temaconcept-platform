@@ -19,7 +19,10 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => array_filter(explode(',', (string) env('FRONTEND_URL', 'http://localhost:5173'))),
+    'allowed_origins' => array_values(array_unique(array_filter([
+        ...explode(',', (string) env('FRONTEND_URL', 'http://localhost:5173')),
+        'https://temaconcept-platform.pages.dev',
+    ]))),
 
     'allowed_origins_patterns' => [],
 
