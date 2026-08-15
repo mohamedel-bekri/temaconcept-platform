@@ -21,4 +21,4 @@ RUN mkdir -p storage/framework/cache storage/framework/sessions storage/framewor
     && chmod -R 775 storage bootstrap/cache database \
     && php artisan package:discover --ansi
 
-CMD ["sh", "-c", "mkdir -p database && touch database/database.sqlite && php artisan migrate --seed --force && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"]
+CMD ["sh", "-c", "export APP_KEY=\"${APP_KEY:-base64:$(php -r 'echo base64_encode(random_bytes(32));')}\" && mkdir -p database && touch database/database.sqlite && php artisan migrate --seed --force && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"]
